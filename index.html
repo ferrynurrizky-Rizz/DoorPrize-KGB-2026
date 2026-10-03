@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1020">
+  <title>Doorprize Akhir Tahun 2026</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div>
+        <div class="eyebrow">ACARA AKHIR TAHUN 2026</div>
+        <h1>DOORPRIZE <span>LUCKY DRAW</span></h1>
+        <p class="subtitle">68 peserta • 20 hadiah • setiap pemenang hanya bisa menang satu kali</p>
+      </div>
+      <div class="top-actions">
+        <button id="fullscreenBtn" class="btn ghost">⛶ Layar Penuh</button>
+        <button id="resetBtn" class="btn danger">↺ Reset</button>
+      </div>
+    </header>
+
+    <main class="main-grid">
+      <section class="draw-card">
+        <div class="draw-head">
+          <div>
+            <div class="label">HADIAH SAAT INI</div>
+            <h2 id="prizeTitle">Doorprize 01</h2>
+          </div>
+          <div class="counter"><strong id="drawnCount">0</strong><span>/ 20</span></div>
+        </div>
+
+        <div class="winner-stage" id="winnerStage">
+          <div class="sparkle s1">✦</div><div class="sparkle s2">✦</div><div class="sparkle s3">✧</div>
+          <div class="stage-label" id="stageLabel">SIAP DIUNDI</div>
+          <div class="winner-name" id="winnerName">TEKAN “UNDI SEKARANG”</div>
+          <div class="winner-no" id="winnerNo">68 peserta tersedia</div>
+        </div>
+
+        <div class="draw-controls">
+          <button id="drawBtn" class="draw-btn">🎉 UNDI SEKARANG</button>
+          <button id="nextBtn" class="btn secondary" disabled>Hadiah Berikutnya →</button>
+        </div>
+
+        <div class="notice" id="notice">
+          <b>Kontrol:</b> tekan <kbd>Space</kbd> untuk mengundi. Pemenang yang sudah keluar otomatis dikeluarkan dari undian berikutnya.
+        </div>
+      </section>
+
+      <aside class="side-card">
+        <div class="side-head">
+          <div>
+            <div class="label">DAFTAR PEMENANG</div>
+            <h3>Hasil Undian</h3>
+          </div>
+          <button id="exportBtn" class="btn small">⇩ CSV</button>
+        </div>
+        <div id="results" class="results empty">
+          <div class="empty-icon">🏆</div>
+          <p>Belum ada pemenang.</p>
+          <small>Hasil akan muncul di sini.</small>
+        </div>
+      </aside>
+    </main>
+
+    <section class="prize-panel">
+      <div class="panel-head">
+        <div>
+          <div class="label">PENGATURAN HADIAH</div>
+          <h3>20 Hadiah Doorprize</h3>
+          <p>Isi nama hadiah sebelum acara. Perubahan tersimpan otomatis di browser ini.</p>
+        </div>
+        <button id="savePrizesBtn" class="btn secondary">✓ Simpan Hadiah</button>
+      </div>
+      <div id="prizeInputs" class="prize-grid"></div>
+    </section>
+
+    <footer>
+      <span>Doorprize Akhir Tahun 2026</span>
+      <span>•</span>
+      <span>Data peserta: Sheet “List Peserta”</span>
+    </footer>
+  </div>
+
+  <div id="toast" class="toast"></div>
+  <script src="participants.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
