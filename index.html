@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="theme-color"
+        content="#050814">
+
+    <title>DoorPrize KGB 2026</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css">
+
+</head>
+
+
+<body>
+
+<div class="app-shell">
+
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="topbar">
+
+        <div class="brand">
+
+            <div class="eyebrow">
+                🎊 ACARA AKHIR TAHUN 2026
+            </div>
+
+            <h1>
+                DOORPRIZE
+                <span>KGB 2026</span>
+            </h1>
+
+            <p class="subtitle">
+                🎁 Lucky Draw • 68 Peserta • 20 Hadiah
+            </p>
+
+        </div>
+
+
+        <div class="top-actions">
+
+            <button
+                id="fullscreenBtn"
+                class="btn ghost">
+
+                ⛶ Layar Penuh
+
+            </button>
+
+
+            <button
+                id="resetBtn"
+                class="btn danger">
+
+                ↺ Reset
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main class="draw-area">
+
+
+        <!-- =================================================
+             PRIZE WHEEL
+        ================================================== -->
+
+        <section class="prize-section">
+
+            <div class="section-header">
+
+                <div>
+
+                    <div class="label">
+                        🎁 UNDIAN HADIAH
+                    </div>
+
+                    <h2>
+                        Putar Roda Keberuntungan
+                    </h2>
+
+                </div>
+
+
+                <div class="round-counter">
+
+                    <span>
+                        HADIAH
+                    </span>
+
+                    <strong id="drawnCount">
+                        0
+                    </strong>
+
+                    <span>
+                        / 20
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="wheel-container">
+
+                <div class="wheel-pointer">
+                    ▼
+                </div>
+
+                <canvas
+                    id="prizeWheel"
+                    width="620"
+                    height="620">
+                </canvas>
+
+                <div class="wheel-glow"></div>
+
+            </div>
+
+
+
+            <div class="selected-prize">
+
+                <div
+                    id="stageLabel"
+                    class="stage-label">
+
+                    SIAP DIUNDI
+
+                </div>
+
+
+                <div
+                    id="prizeTitle"
+                    class="prize-title">
+
+                    Doorprize 01
+
+                </div>
+
+
+                <div
+                    id="prizeDescription"
+                    class="prize-description">
+
+                    Putar roda untuk menentukan hadiah
+
+                </div>
+
+            </div>
+
+
+
+            <button
+                id="spinPrizeBtn"
+                class="main-action">
+
+                🎡 PUTAR HADIAH
+
+            </button>
+
+        </section>
+
+
+
+        <!-- =================================================
+             WISH BALL
+        ================================================== -->
+
+        <section class="wish-section">
+
+            <div class="section-header">
+
+                <div>
+
+                    <div class="label">
+                        ✨ WISH BALL
+                    </div>
+
+                    <h2>
+                        Siapa yang Beruntung?
+                    </h2>
+
+                </div>
+
+
+                <div
+                    id="availableCount"
+                    class="available-count">
+
+                    68 peserta
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =============================================
+                 WISH BALL AREA
+            ============================================== -->
+
+            <div
+                id="wishBallStage"
+                class="wish-ball-stage">
+
+                <div class="wish-stars"></div>
+
+                <div
+                    id="wishBalls"
+                    class="wish-balls">
+
+                </div>
+
+
+                <div
+                    id="wishCenter"
+                    class="wish-center">
+
+                    <div class="wish-center-icon">
+                        ✨
+                    </div>
+
+                    <div class="wish-center-text">
+                        WISH BALL
+                    </div>
+
+                    <div
+                        id="wishCenterSub"
+                        class="wish-center-sub">
+
+                        Siap memilih
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =============================================
+                 COUNTDOWN
+            ============================================== -->
+
+            <div
+                id="raceCountdown"
+                class="wish-countdown">
+
+                SIAP
+
+            </div>
+
+
+
+            <!-- =============================================
+                 WINNER
+            ============================================== -->
+
+            <div
+                id="winnerStage"
+                class="winner-stage">
+
+                <div class="winner-trophy">
+                    🏆
+                </div>
+
+
+                <div
+                    id="winnerName"
+                    class="winner-name">
+
+                    MENUNGGU HADIAH
+
+                </div>
+
+
+                <div
+                    id="winnerNo"
+                    class="winner-no">
+
+                    Undian belum dimulai
+
+                </div>
+
+            </div>
+
+
+
+            <button
+                id="raceBtn"
+                class="main-action wish-action"
+                disabled>
+
+                ✨ MULAI WISH BALL
+
+            </button>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         RESULTS
+    ====================================================== -->
+
+    <section class="results-panel">
+
+        <div class="panel-head">
+
+            <div>
+
+                <div class="label">
+                    🏆 HASIL UNDIAN
+                </div>
+
+                <h3>
+                    Daftar Pemenang
+                </h3>
+
+            </div>
+
+
+            <button
+                id="exportBtn"
+                class="btn small">
+
+                ⇩ Export CSV
+
+            </button>
+
+        </div>
+
+
+        <div
+            id="results"
+            class="results empty">
+
+            <div class="empty-icon">
+                🏆
+            </div>
+
+            <p>
+                Belum ada pemenang
+            </p>
+
+            <small>
+                Pemenang akan muncul setelah Wish Ball selesai.
+            </small>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         PRIZE SETTINGS
+    ====================================================== -->
+
+    <section class="prize-panel">
+
+        <div class="panel-head">
+
+            <div>
+
+                <div class="label">
+                    ⚙️ PENGATURAN HADIAH
+                </div>
+
+                <h3>
+                    20 Hadiah Doorprize
+                </h3>
+
+                <p>
+                    Masukkan nama hadiah sebelum acara dimulai.
+                </p>
+
+            </div>
+
+
+            <button
+                id="savePrizesBtn"
+                class="btn secondary">
+
+                ✓ Simpan Hadiah
+
+            </button>
+
+        </div>
+
+
+        <div
+            id="prizeInputs"
+            class="prize-grid">
+
+        </div>
+
+    </section>
+
+
+
+    <footer>
+
+        <span>
+            DoorPrize KGB 2026
+        </span>
+
+        <span>•</span>
+
+        <span>
+            Wish Ball Edition
+        </span>
+
+        <span>•</span>
+
+        <span>
+            20 Pemenang
+        </span>
+
+    </footer>
+
+
+</div>
+
+
+
+<div
+    id="toast"
+    class="toast">
+</div>
+
+
+
+<script src="participants.js"></script>
+
+<script src="app.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,1767 @@
+/* =========================================================
+   DOORPRIZE KGB 2026
+   PREMIUM WISH BALL EDITION
+========================================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+
+    --bg:
+        #040711;
+
+    --panel:
+        #0c1427;
+
+    --panel2:
+        #111c34;
+
+    --gold:
+        #ffd45a;
+
+    --gold2:
+        #ffae32;
+
+    --white:
+        #ffffff;
+
+    --muted:
+        #8c99b3;
+
+    --green:
+        #52e1ad;
+
+    --red:
+        #ff6674;
+
+    --blue:
+        #5ca9ff;
+}
+
+
+/* =========================================================
+   BODY
+========================================================= */
+
+html {
+    min-height: 100%;
+}
+
+body {
+
+    min-height: 100vh;
+
+    font-family:
+        Inter,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    color:
+        var(--white);
+
+    background:
+
+        radial-gradient(
+            circle at 50% -10%,
+            #263968 0,
+            transparent 42%
+        ),
+
+        radial-gradient(
+            circle at 0% 50%,
+            rgba(76,111,210,.10),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            180deg,
+            #070b18,
+            #03050d
+        );
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   APP
+========================================================= */
+
+.app-shell {
+
+    width: 100%;
+
+    max-width: 1600px;
+
+    margin:
+        auto;
+
+    padding:
+        25px
+        32px
+        35px;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.topbar {
+
+    display:
+        flex;
+
+    align-items:
+        flex-start;
+
+    justify-content:
+        space-between;
+
+    gap:
+        25px;
+
+    margin-bottom:
+        22px;
+}
+
+.eyebrow {
+
+    color:
+        var(--gold);
+
+    font-size:
+        11px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        .20em;
+
+    margin-bottom:
+        7px;
+}
+
+h1 {
+
+    font-size:
+        clamp(
+            32px,
+            4vw,
+            56px
+        );
+
+    line-height:
+        .95;
+
+    letter-spacing:
+        -.045em;
+
+    font-weight:
+        950;
+}
+
+h1 span {
+
+    color:
+        var(--gold);
+}
+
+.subtitle {
+
+    color:
+        var(--muted);
+
+    font-size:
+        13px;
+
+    margin-top:
+        10px;
+}
+
+.top-actions {
+
+    display:
+        flex;
+
+    gap:
+        9px;
+}
+
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.btn {
+
+    border:
+        1px solid
+        rgba(255,255,255,.10);
+
+    background:
+        rgba(18,28,49,.8);
+
+    color:
+        var(--white);
+
+    border-radius:
+        10px;
+
+    padding:
+        10px 14px;
+
+    font-weight:
+        750;
+
+    cursor:
+        pointer;
+
+    transition:
+        .2s ease;
+}
+
+.btn:hover {
+
+    border-color:
+        rgba(255,212,90,.5);
+
+    transform:
+        translateY(-1px);
+}
+
+.btn.ghost {
+
+    background:
+        transparent;
+}
+
+.btn.danger {
+
+    color:
+        #ff9da7;
+}
+
+.btn.secondary {
+
+    background:
+        #192641;
+}
+
+.btn.small {
+
+    font-size:
+        11px;
+
+    padding:
+        8px 11px;
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.draw-area {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        minmax(0,1fr)
+        minmax(0,1fr);
+
+    gap:
+        18px;
+}
+
+
+/* =========================================================
+   PANEL
+========================================================= */
+
+.prize-section,
+.wish-section,
+.results-panel,
+.prize-panel {
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(16,27,49,.97),
+            rgba(6,11,23,.98)
+        );
+
+    border:
+        1px solid
+        rgba(255,255,255,.09);
+
+    border-radius:
+        21px;
+
+    box-shadow:
+        0 25px 80px
+        rgba(0,0,0,.35);
+
+    overflow:
+        hidden;
+}
+
+.prize-section,
+.wish-section {
+
+    padding:
+        22px;
+}
+
+.results-panel,
+.prize-panel {
+
+    margin-top:
+        18px;
+
+    padding:
+        20px;
+}
+
+
+/* =========================================================
+   HEADERS
+========================================================= */
+
+.section-header,
+.panel-head {
+
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        center;
+
+    gap:
+        15px;
+}
+
+.label {
+
+    color:
+        var(--gold);
+
+    font-size:
+        10px;
+
+    font-weight:
+        950;
+
+    letter-spacing:
+        .18em;
+
+    margin-bottom:
+        6px;
+}
+
+.section-header h2,
+.panel-head h3 {
+
+    font-size:
+        22px;
+
+    font-weight:
+        950;
+}
+
+.round-counter {
+
+    display:
+        flex;
+
+    align-items:
+        baseline;
+
+    gap:
+        4px;
+
+    color:
+        var(--muted);
+
+    font-size:
+        11px;
+}
+
+.round-counter strong {
+
+    color:
+        var(--gold);
+
+    font-size:
+        32px;
+}
+
+.available-count {
+
+    padding:
+        7px 12px;
+
+    border-radius:
+        999px;
+
+    color:
+        var(--green);
+
+    background:
+        rgba(82,225,173,.08);
+
+    border:
+        1px solid
+        rgba(82,225,173,.18);
+
+    font-size:
+        11px;
+
+    font-weight:
+        900;
+}
+
+
+/* =========================================================
+   PREMIUM WHEEL
+========================================================= */
+
+.wheel-container {
+
+    position:
+        relative;
+
+    width:
+        min(
+            100%,
+            475px
+        );
+
+    aspect-ratio:
+        1;
+
+    margin:
+        18px auto 8px;
+
+    display:
+        grid;
+
+    place-items:
+        center;
+}
+
+#wheelCanvas {
+
+    display:
+        block;
+}
+
+
+/* canvas itself */
+
+#prizeWheel {
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    display:
+        block;
+
+    transform:
+        rotate(0deg);
+
+    transition:
+        transform 6s
+        cubic-bezier(
+            .12,
+            .78,
+            .08,
+            1
+        );
+
+    filter:
+        drop-shadow(
+            0 15px 25px
+            rgba(0,0,0,.4)
+        );
+}
+
+
+/* outer glow */
+
+.wheel-glow {
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    border-radius:
+        50%;
+
+    pointer-events:
+        none;
+
+    box-shadow:
+
+        inset
+        0 0 40px
+        rgba(255,255,255,.08),
+
+        0 0 45px
+        rgba(255,212,90,.10);
+}
+
+
+/* pointer */
+
+.wheel-pointer {
+
+    position:
+        absolute;
+
+    z-index:
+        20;
+
+    top:
+        -3px;
+
+    left:
+        50%;
+
+    transform:
+        translateX(-50%);
+
+    width:
+        0;
+
+    height:
+        0;
+
+    border-left:
+        18px solid transparent;
+
+    border-right:
+        18px solid transparent;
+
+    border-top:
+        42px solid
+        var(--gold);
+
+    filter:
+        drop-shadow(
+            0 5px 8px
+            rgba(0,0,0,.5)
+        );
+}
+
+
+/* =========================================================
+   PRIZE TEXT
+========================================================= */
+
+.selected-prize {
+
+    text-align:
+        center;
+
+    margin:
+        4px 0 15px;
+}
+
+.stage-label {
+
+    color:
+        var(--gold);
+
+    font-size:
+        10px;
+
+    font-weight:
+        950;
+
+    letter-spacing:
+        .20em;
+
+    margin-bottom:
+        7px;
+}
+
+.prize-title {
+
+    font-size:
+        clamp(
+            25px,
+            3vw,
+            38px
+        );
+
+    font-weight:
+        950;
+
+    line-height:
+        1.05;
+}
+
+.prize-description {
+
+    color:
+        var(--muted);
+
+    font-size:
+        11px;
+
+    margin-top:
+        6px;
+}
+
+
+/* =========================================================
+   MAIN BUTTON
+========================================================= */
+
+.main-action {
+
+    width:
+        100%;
+
+    border:
+        0;
+
+    border-radius:
+        12px;
+
+    padding:
+        15px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffe17c,
+            #e7a930
+        );
+
+    color:
+        #171108;
+
+    font-size:
+        15px;
+
+    font-weight:
+        950;
+
+    cursor:
+        pointer;
+
+    transition:
+        .2s ease;
+
+    box-shadow:
+        0 10px 35px
+        rgba(231,169,48,.16);
+}
+
+.main-action:hover:not(:disabled) {
+
+    transform:
+        translateY(-2px);
+
+    filter:
+        brightness(1.08);
+}
+
+.main-action:disabled {
+
+    opacity:
+        .35;
+
+    cursor:
+        not-allowed;
+
+    box-shadow:
+        none;
+}
+
+
+/* =========================================================
+   WISH BALL STAGE
+========================================================= */
+
+.wish-ball-stage {
+
+    position:
+        relative;
+
+    height:
+        400px;
+
+    margin-top:
+        15px;
+
+    border-radius:
+        18px;
+
+    overflow:
+        hidden;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(83,123,211,.16),
+            transparent 48%
+        ),
+
+        radial-gradient(
+            circle at 30% 20%,
+            rgba(255,212,90,.07),
+            transparent 28%
+        ),
+
+        #070d1c;
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+}
+
+
+/* =========================================================
+   STARS
+========================================================= */
+
+.wish-stars {
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    background-image:
+
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.7) 1px,
+            transparent 1.5px
+        );
+
+    background-size:
+        55px 55px;
+
+    opacity:
+        .16;
+
+    animation:
+        starMove
+        15s
+        linear
+        infinite;
+}
+
+@keyframes starMove {
+
+    from {
+        transform:
+            translateY(0);
+    }
+
+    to {
+        transform:
+            translateY(55px);
+    }
+}
+
+
+/* =========================================================
+   BALL CONTAINER
+========================================================= */
+
+.wish-balls {
+
+    position:
+        absolute;
+
+    inset:
+        15px;
+
+    z-index:
+        5;
+}
+
+
+/* =========================================================
+   WISH BALL
+========================================================= */
+
+.wish-ball {
+
+    position:
+        absolute;
+
+    width:
+        65px;
+
+    height:
+        65px;
+
+    border-radius:
+        50%;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    text-align:
+        center;
+
+    padding:
+        7px;
+
+    color:
+        #fff;
+
+    font-size:
+        8px;
+
+    line-height:
+        1.05;
+
+    font-weight:
+        900;
+
+    text-shadow:
+        0 2px 3px
+        rgba(0,0,0,.7);
+
+    border:
+        2px solid
+        rgba(255,255,255,.45);
+
+    box-shadow:
+
+        inset
+        -7px -8px 12px
+        rgba(0,0,0,.25),
+
+        inset
+        6px 6px 12px
+        rgba(255,255,255,.22),
+
+        0 5px 18px
+        rgba(0,0,0,.35);
+
+    transform:
+        translate(-50%,-50%);
+
+    transition:
+        opacity .35s ease,
+        transform .35s ease,
+        filter .35s ease;
+}
+
+
+/* shine */
+
+.wish-ball::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    left:
+        12px;
+
+    top:
+        8px;
+
+    width:
+        16px;
+
+    height:
+        8px;
+
+    border-radius:
+        50%;
+
+    background:
+        rgba(255,255,255,.55);
+
+    filter:
+        blur(2px);
+
+    transform:
+        rotate(-25deg);
+}
+
+
+/* floating animation */
+
+.wish-ball.floating {
+
+    animation:
+        ballFloat
+        var(--float-time)
+        ease-in-out
+        infinite
+        alternate;
+}
+
+@keyframes ballFloat {
+
+    from {
+
+        margin-top:
+            -5px;
+
+        transform:
+            translate(-50%,-50%)
+            rotate(-3deg);
+    }
+
+    to {
+
+        margin-top:
+            5px;
+
+        transform:
+            translate(-50%,-50%)
+            rotate(3deg);
+    }
+}
+
+
+/* eliminated */
+
+.wish-ball.eliminated {
+
+    opacity:
+        0;
+
+    transform:
+        translate(-50%,-50%)
+        scale(.1);
+
+    filter:
+        blur(8px);
+}
+
+
+/* selected */
+
+.wish-ball.selected {
+
+    z-index:
+        100;
+
+    width:
+        125px;
+
+    height:
+        125px;
+
+    font-size:
+        13px;
+
+    border:
+        4px solid
+        var(--gold);
+
+    box-shadow:
+
+        0 0 20px
+        rgba(255,212,90,.7),
+
+        0 0 70px
+        rgba(255,212,90,.5),
+
+        inset
+        0 0 25px
+        rgba(255,255,255,.15);
+
+    animation:
+        wishWinner
+        1s
+        ease-in-out
+        infinite
+        alternate;
+}
+
+@keyframes wishWinner {
+
+    from {
+
+        transform:
+            translate(-50%,-50%)
+            scale(1);
+    }
+
+    to {
+
+        transform:
+            translate(-50%,-50%)
+            scale(1.08);
+    }
+}
+
+
+/* =========================================================
+   CENTER
+========================================================= */
+
+.wish-center {
+
+    position:
+        absolute;
+
+    z-index:
+        10;
+
+    left:
+        50%;
+
+    top:
+        50%;
+
+    transform:
+        translate(-50%,-50%);
+
+    width:
+        125px;
+
+    height:
+        125px;
+
+    border-radius:
+        50%;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    flex-direction:
+        column;
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(35,52,88,.96),
+            rgba(8,14,28,.98)
+        );
+
+    border:
+        2px solid
+        rgba(255,212,90,.25);
+
+    box-shadow:
+
+        0 0 35px
+        rgba(72,108,190,.22),
+
+        inset
+        0 0 25px
+        rgba(0,0,0,.4);
+}
+
+.wish-center-icon {
+
+    font-size:
+        29px;
+
+    animation:
+        centerPulse
+        2s
+        ease-in-out
+        infinite;
+}
+
+@keyframes centerPulse {
+
+    50% {
+        transform:
+            scale(1.15);
+    }
+}
+
+.wish-center-text {
+
+    margin-top:
+        3px;
+
+    color:
+        var(--gold);
+
+    font-size:
+        12px;
+
+    font-weight:
+        950;
+
+    letter-spacing:
+        .14em;
+}
+
+.wish-center-sub {
+
+    margin-top:
+        5px;
+
+    color:
+        var(--muted);
+
+    font-size:
+        8px;
+}
+
+
+/* =========================================================
+   WISH COUNTDOWN
+========================================================= */
+
+.wish-countdown {
+
+    min-height:
+        60px;
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    color:
+        var(--gold);
+
+    font-size:
+        29px;
+
+    font-weight:
+        950;
+
+    letter-spacing:
+        .08em;
+
+    text-shadow:
+        0 0 25px
+        rgba(255,212,90,.35);
+}
+
+.wish-countdown.suspense {
+
+    font-size:
+        46px;
+
+    animation:
+        suspense
+        .35s
+        ease-in-out
+        infinite
+        alternate;
+}
+
+@keyframes suspense {
+
+    from {
+        transform:
+            scale(1);
+    }
+
+    to {
+        transform:
+            scale(1.16);
+    }
+}
+
+
+/* =========================================================
+   WINNER
+========================================================= */
+
+.winner-stage {
+
+    position:
+        relative;
+
+    min-height:
+        105px;
+
+    border-radius:
+        15px;
+
+    border:
+        1px solid
+        rgba(255,212,90,.12);
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    text-align:
+        center;
+
+    background:
+        rgba(7,13,27,.7);
+
+    overflow:
+        hidden;
+}
+
+.winner-trophy {
+
+    font-size:
+        27px;
+
+    margin-bottom:
+        4px;
+}
+
+.winner-name {
+
+    font-size:
+        clamp(
+            20px,
+            2.4vw,
+            31px
+        );
+
+    font-weight:
+        950;
+}
+
+.winner-no {
+
+    color:
+        var(--muted);
+
+    font-size:
+        10px;
+
+    margin-top:
+        5px;
+}
+
+.winner-stage.celebrate {
+
+    animation:
+        winnerGlow
+        1s
+        ease;
+}
+
+@keyframes winnerGlow {
+
+    50% {
+
+        box-shadow:
+            0 0 75px
+            rgba(255,212,90,.3);
+    }
+}
+
+
+/* =========================================================
+   WISH BUTTON
+========================================================= */
+
+.wish-action {
+
+    margin-top:
+        14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #72aaff,
+            #5b5fe0
+        );
+
+    color:
+        #fff;
+
+    box-shadow:
+        0 10px 35px
+        rgba(91,95,224,.20);
+}
+
+
+/* =========================================================
+   RESULTS
+========================================================= */
+
+.results {
+
+    margin-top:
+        14px;
+
+    max-height:
+        370px;
+
+    overflow:
+        auto;
+}
+
+.results.empty {
+
+    min-height:
+        100px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    flex-direction:
+        column;
+
+    color:
+        var(--muted);
+
+    text-align:
+        center;
+}
+
+.empty-icon {
+
+    font-size:
+        35px;
+
+    margin-bottom:
+        5px;
+}
+
+.results.empty p {
+
+    color:
+        #e2e7f2;
+
+    font-weight:
+        800;
+}
+
+.results.empty small {
+
+    font-size:
+        10px;
+
+    margin-top:
+        4px;
+}
+
+.result-row {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        38px 1fr;
+
+    gap:
+        10px;
+
+    align-items:
+        center;
+
+    padding:
+        9px 7px;
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,.06);
+}
+
+.result-num {
+
+    width:
+        29px;
+
+    height:
+        29px;
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    border-radius:
+        8px;
+
+    background:
+        #1b2945;
+
+    color:
+        var(--gold);
+
+    font-size:
+        10px;
+
+    font-weight:
+        950;
+}
+
+.result-prize {
+
+    color:
+        var(--gold);
+
+    font-size:
+        9px;
+
+    font-weight:
+        900;
+}
+
+.result-name {
+
+    margin-top:
+        2px;
+
+    font-size:
+        13px;
+
+    font-weight:
+        850;
+}
+
+.result-meta {
+
+    margin-top:
+        2px;
+
+    color:
+        var(--muted);
+
+    font-size:
+        9px;
+}
+
+
+/* =========================================================
+   PRIZE SETTINGS
+========================================================= */
+
+.prize-panel p {
+
+    color:
+        var(--muted);
+
+    font-size:
+        10px;
+
+    margin-top:
+        4px;
+}
+
+.prize-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(4,minmax(0,1fr));
+
+    gap:
+        8px;
+
+    margin-top:
+        15px;
+}
+
+.prize-item {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        7px;
+}
+
+.prize-item span {
+
+    width:
+        23px;
+
+    color:
+        var(--muted);
+
+    font-size:
+        10px;
+
+    font-weight:
+        900;
+}
+
+.prize-item input {
+
+    width:
+        100%;
+
+    background:
+        #080e1c;
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+
+    border-radius:
+        8px;
+
+    color:
+        #fff;
+
+    padding:
+        9px;
+
+    outline:
+        none;
+}
+
+.prize-item input:focus {
+
+    border-color:
+        rgba(255,212,90,.5);
+}
+
+
+/* =========================================================
+   TOAST
+========================================================= */
+
+.toast {
+
+    position:
+        fixed;
+
+    left:
+        50%;
+
+    bottom:
+        25px;
+
+    transform:
+        translate(-50%,20px);
+
+    opacity:
+        0;
+
+    pointer-events:
+        none;
+
+    z-index:
+        9999;
+
+    padding:
+        11px 17px;
+
+    border-radius:
+        10px;
+
+    background:
+        #17233d;
+
+    border:
+        1px solid
+        rgba(255,255,255,.12);
+
+    font-size:
+        11px;
+
+    font-weight:
+        750;
+
+    transition:
+        .25s;
+}
+
+.toast.show {
+
+    opacity:
+        1;
+
+    transform:
+        translate(-50%,0);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    gap:
+        8px;
+
+    margin-top:
+        18px;
+
+    color:
+        #58657e;
+
+    font-size:
+        9px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:1050px) {
+
+    .draw-area {
+
+        grid-template-columns:
+            1fr;
+    }
+}
+
+@media(max-width:700px) {
+
+    .app-shell {
+
+        padding:
+            17px 13px 25px;
+    }
+
+    .topbar {
+
+        flex-direction:
+            column;
+    }
+
+    .top-actions {
+
+        width:
+            100%;
+    }
+
+    .top-actions .btn {
+
+        flex:
+            1;
+    }
+
+    .wish-ball-stage {
+
+        height:
+            360px;
+    }
+
+    .prize-grid {
+
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+}
+
+@media(max-width:480px) {
+
+    h1 {
+
+        font-size:
+            30px;
+    }
+
+    .prize-grid {
+
+        grid-template-columns:
+            1fr;
+    }
+
+    .wish-ball {
+
+        width:
+            54px;
+
+        height:
+            54px;
+
+        font-size:
+            7px;
+    }
+
+    .wish-center {
+
+        width:
+            100px;
+
+        height:
+            100px;
+    }
+}
+
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+::-webkit-scrollbar {
+
+    width:
+        7px;
+}
+
+::-webkit-scrollbar-track {
+
+    background:
+        #070c18;
+}
+
+::-webkit-scrollbar-thumb {
+
+    background:
+        #273653;
+
+    border-radius:
+        10px;
+}
